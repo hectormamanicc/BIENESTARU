@@ -1,7 +1,7 @@
 <%@ include file="../common/IncludeTop.jsp"%>
 
 <div id="Catalog"><stripes:form
-	beanclass="org.mybatis.jpetstore.web.actions.AccountActionBean"
+	beanclass="org.mybatis.bu.web.actions.AccountActionBean"
 	focus="">
 
 	<h3>User Information</h3>
@@ -25,7 +25,7 @@
 	<stripes:submit name="editAccount" value="Save Account Information" />
 
 </stripes:form> <stripes:link
-	beanclass="org.mybatis.jpetstore.web.actions.OrderActionBean"
+	beanclass="org.mybatis.bu.web.actions.OrderActionBean"
 	event="listOrders">My Orders</stripes:link></div>
 
 <%@ include file="../common/IncludeBottom.jsp"%>

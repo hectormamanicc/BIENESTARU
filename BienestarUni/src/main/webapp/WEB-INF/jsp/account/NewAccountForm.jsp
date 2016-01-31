@@ -1,7 +1,7 @@
 <%@ include file="../common/IncludeTop.jsp"%>
 
 <div id="Catalog"><stripes:form
-	beanclass="org.mybatis.jpetstore.web.actions.AccountActionBean"
+	beanclass="org.mybatis.bu.web.actions.AccountActionBean"
 	focus="">
 
 	<h3>User Information</h3>

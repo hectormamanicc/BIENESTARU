@@ -12,7 +12,7 @@
 	<c:forEach var="order" items="${actionBean.orderList}">
 		<tr>
 			<td><stripes:link
-				beanclass="org.mybatis.jpetstore.web.actions.OrderActionBean"
+				beanclass="org.mybatis.bu.web.actions.OrderActionBean"
 				event="viewOrder">
 				<stripes:param name="orderId" value="${order.orderId}" />
 			    ${order.orderId}
