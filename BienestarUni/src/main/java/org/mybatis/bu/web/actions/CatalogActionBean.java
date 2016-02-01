@@ -127,17 +127,22 @@ public class CatalogActionBean extends AbstractActionBean {
 
   public ForwardResolution viewCategory() {
     if (categoryId != null) {
+        System.out.println("aaxawdawdawdawd");
       productList = catalogService.getProductListByCategory(categoryId);
       category = catalogService.getCategory(categoryId);
     }
+    System.out.println("aax");
     return new ForwardResolution(VIEW_CATEGORY);
+    
   }
 
   public ForwardResolution viewProduct() {
     if (productId != null) {
+        System.out.println("awdaawdawdawdwd");
       itemList = catalogService.getItemListByProduct(productId);
       product = catalogService.getProduct(productId);
     }
+    System.out.println("awdawd");
     return new ForwardResolution(VIEW_PRODUCT);
   }
 
