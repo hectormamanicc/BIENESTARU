@@ -34,6 +34,7 @@
         <jdbc:script location="classpath:database/jpetstore-hsqldb-dataload.sql"/>
     </jdbc:embedded-database>
 -->
+<!--
 <bean id="dataSource"
     class="org.springframework.jdbc.datasource.DriverManagerDataSource">
     <property name="driverClassName" value="com.mysql.jdbc.Driver" />
@@ -41,6 +42,29 @@
     <property name="username" value="root" />
     <property name="password" value="root" />
   </bean>
+  -->
+  <!--
+  <bean id="dataSource" class="oracle.jdbc.pool.OracleDataSource" destroy-method="close"> 
+        <property name="URL" value="jdbc:oracle:thin:@localhost:1521:XE" /> 
+        <property name="user" value="BD_JPSTORE"/> 
+        <property name="password" value="neoangel"/> 
+        <property name="connectionCachingEnabled" value="true"/> 
+    </bean>
+  <context:property-placeholder location="classpath:jdbc.properties"/>
+-->
+<bean id="dataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE" />
+		<property name="username" value="BD_JPSTORE" />
+		<property name="password" value="neoangel" />
+
+	</bean>
+<bean id="abstractJdbcDAO" abstract="true"
+		class="org.springframework.jdbc.core.simple.SimpleJdbcDaoSupport">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean>
+
 
     <!-- transaction manager, use JtaTransactionManager for global tx -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
